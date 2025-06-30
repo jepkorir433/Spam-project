@@ -1,0 +1,17 @@
+You have won 1 million dollars! Click here to claim.
+Hello, I hope you're doing well.
+Limited time offer – act now!
+Let's catch up later today.
+
+
+prediction = model.predict(vectorized)
+return "🚫 Spam" if prediction[0] == 1 else "✅ Not Spam", prediction[0]
+
+prediction = model.predict(vectorized)
+probability = model.predict_proba(vectorized).max()
+label = "🚫 Spam" if prediction[0] == 1 else "✅ Not Spam"
+return label, prediction[0], round(probability * 100, 2)
+
+
+result, pred_value, confidence = predict_message(user_input, model, vectorizer)
+st.success(f"**Result:** {result} \n\n🔍 Confidence: {confidence}%")
